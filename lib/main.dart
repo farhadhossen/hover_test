@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'OnHover.dart';
+import 'package:hoverover/hoverover.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,69 +35,37 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Hover Example"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OnHover(
-              builder: (isHovered) {
-                final color = isHovered ? Colors.orange : Colors.redAccent;
-                return PhysicalModel(
-                  color: Colors.white,
-                  elevation: isHovered ? 16 : 0,
-                  child: Container(
-                      height: 50,
-                      width: 200,
-                      color: color,
-                      child: Center(
-                        child: Text("Proto Coders Point"),
-                      )),
-                );
-              },
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            OnHover(builder: (isHovered) {
-              return Text(
-                  "Flutter Text on hover - change text color on hovering with animation");
-            }),
-            SizedBox(
-              height: 30,
-            ),
-            //if isHovered is true then show elevation else set elevation to 0
-            OnHover(builder: (isHovered) {
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          HoverOver(
+            builder: (isHovered) {
+              /// change color on hover
+              final color = isHovered ? Colors.orange : Colors.redAccent;
               return PhysicalModel(
-                color: Colors.blue,
+                color: Colors.white,
                 elevation: isHovered ? 16 : 0,
                 child: Container(
-                  width: 100,
-                  height: 100,
-                ),
+                    height: 50,
+                    width: 200,
+                    color: color,
+                    child: const Center(
+                      child: Text("Hoverover me"),
+                    )),
               );
-            }),
-
-            OnHover(builder: (isHovered) {
-              final color = isHovered ? Colors.grey : Colors.blue;
-              return Container(
-                color: color,
-                width: 100,
-                height: 100,
-              );
-            }),
-            SizedBox(
-              height: 30,
-            ),
-            OnHover(builder: (isHovered) {
-              final color = isHovered ? Colors.red : Colors.blue;
-              return ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: color),
-                  onPressed: () {},
-                  child: Text('Change Button Color on hover'));
-            }),
-          ],
-        ),
-      ),
+            },
+            /// animation duration
+            animationDurationInMilliseconds: 600,
+            /// translation of x axis
+            translateXAxis: 7,
+            /// translation of y axis
+            translateYAxis: 15,
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+        ],
+      )
     );
   }
 }
