@@ -54,46 +54,46 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
-            SizedBox(
-              height: 30,
-            ),
-            OnHover(builder: (isHovered) {
-              return Text(
-                  "Flutter Text on hover - change text color on hovering with animation");
-            }),
-            SizedBox(
-              height: 30,
-            ),
-            //if isHovered is true then show elevation else set elevation to 0
-            OnHover(builder: (isHovered) {
-              return PhysicalModel(
-                color: Colors.blue,
-                elevation: isHovered ? 16 : 0,
-                child: Container(
-                  width: 100,
-                  height: 100,
-                ),
-              );
-            }),
-
-            OnHover(builder: (isHovered) {
-              final color = isHovered ? Colors.grey : Colors.blue;
-              return Container(
-                color: color,
-                width: 100,
-                height: 100,
-              );
-            }),
-            SizedBox(
-              height: 30,
-            ),
-            OnHover(builder: (isHovered) {
-              final color = isHovered ? Colors.red : Colors.blue;
-              return ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: color),
-                  onPressed: () {},
-                  child: Text('Change Button Color on hover'));
-            }),
+            // SizedBox(
+            //   height: 30,
+            // ),
+            // OnHover(builder: (isHovered) {
+            //   return Text(
+            //       "Flutter Text on hover - change text color on hovering with animation");
+            // }),
+            // SizedBox(
+            //   height: 30,
+            // ),
+            // //if isHovered is true then show elevation else set elevation to 0
+            // OnHover(builder: (isHovered) {
+            //   return PhysicalModel(
+            //     color: Colors.blue,
+            //     elevation: isHovered ? 16 : 0,
+            //     child: Container(
+            //       width: 100,
+            //       height: 100,
+            //     ),
+            //   );
+            // }),
+            //
+            // OnHover(builder: (isHovered) {
+            //   final color = isHovered ? Colors.grey : Colors.blue;
+            //   return Container(
+            //     color: color,
+            //     width: 100,
+            //     height: 100,
+            //   );
+            // }),
+            // SizedBox(
+            //   height: 30,
+            // ),
+            // OnHover(builder: (isHovered) {
+            //   final color = isHovered ? Colors.red : Colors.blue;
+            //   return ElevatedButton(
+            //       style: ElevatedButton.styleFrom(primary: color),
+            //       onPressed: () {},
+            //       child: Text('Change Button Color on hover'));
+            // }),
           ],
         ),
       ),
